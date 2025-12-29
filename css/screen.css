@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Screen Styles
+   Micro-interactions and animations for digital viewing
+   ========================================================================== */
+
+/* ===== LINK HOVER ANIMATION ===== */
+.header__contact a {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.header__contact a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-warm);
+    transition: width 0.25s ease;
+}
+
+.header__contact a:hover {
+    color: var(--accent-warm);
+}
+
+.header__contact a:hover::after {
+    width: 100%;
+}
+
+/* ===== EXPERIENCE ITEM HOVER ===== */
+.experience-item {
+    transition: background-color 0.2s ease;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    border-radius: 4px;
+}
+
+.experience-item:hover {
+    background-color: rgba(139, 115, 85, 0.04);
+}
+
+/* ===== PAGE LOAD ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    animation: fadeInUp 0.4s ease both;
+}
+
+.section:nth-of-type(1) {
+    animation: fadeInUp 0.4s ease both;
+    animation-delay: 0.05s;
+}
+
+.section:nth-of-type(2) {
+    animation: fadeInUp 0.4s ease both;
+    animation-delay: 0.1s;
+}
+
+.section:nth-of-type(3) {
+    animation: fadeInUp 0.4s ease both;
+    animation-delay: 0.15s;
+}
+
+.section:nth-of-type(4) {
+    animation: fadeInUp 0.4s ease both;
+    animation-delay: 0.2s;
+}
+
+.section:nth-of-type(5) {
+    animation: fadeInUp 0.4s ease both;
+    animation-delay: 0.25s;
+}
+
+/* ===== ACCESSIBILITY: REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

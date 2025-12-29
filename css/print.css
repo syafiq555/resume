@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Print Styles
+   Optimized for A4 paper output
+   ========================================================================== */
+
+html {
+    font-size: 10.5pt;
+}
+
+body {
+    background: white;
+    padding: 0;
+}
+
+.resume {
+    max-width: none;
+    box-shadow: none;
+}
+
+.resume__inner {
+    padding: 0.4in 0.55in;
+}
+
+/* ===== HEADER ===== */
+.header {
+    margin-bottom: 1.25rem;
+}
+
+.header__name {
+    font-size: 22pt;
+}
+
+.header__divider {
+    margin-top: 1rem;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    margin-bottom: 1rem;
+}
+
+.section__header {
+    margin-bottom: 0.6rem;
+}
+
+/* ===== EXPERIENCE ===== */
+.experience-item {
+    margin-bottom: 0.9rem;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: inherit !important;
+}
+
+/* Hide screen-only decorations */
+a::after {
+    display: none !important;
+}
+
+/* ===== PAGE SETTINGS ===== */
+@page {
+    size: A4;
+    margin: 0;
+}

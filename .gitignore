@@ -10,3 +10,6 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+
+# Local Claude context (personal, not for public repo)
+CLAUDE.local.md

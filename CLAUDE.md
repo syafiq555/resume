@@ -18,7 +18,7 @@ Static HTML resume/CV page for Syafiq Bin Shamsuddin. No build tools or dependen
 
 ## Development
 
-Open `index.html` directly in browser, or serve via Laragon at `http://localhost/resume/`
+Open `index.html` directly in the browser (`file://` path). This project lives under `~/Herd/` but is a plain static directory - it is **not** a Herd-linked site, so `resume.test` does not resolve. No dev server needed.
 
 ## Print to PDF
 

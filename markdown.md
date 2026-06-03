@@ -16,17 +16,19 @@ Highly skilled developer specializing in **PHP (Laravel)** and **JavaScript (Nod
 
 ### **Technical Skills**
 
-- **Languages:** PHP, JavaScript, TypeScript, Vanilla JS
+- **Languages:** PHP, JavaScript, TypeScript, C#, Vanilla JS
 
-- **Backend Frameworks:** Laravel (Expert), Node.js (Express), Lumen, Slim, CodeIgniter
+- **Backend Frameworks:** Laravel (Expert), .NET Core, Node.js (Express), Lumen, Slim, CodeIgniter
 
-- **Frontend Technologies:** ReactJS, Next.js, Vue.js, AngularJS, Ionic, jQuery, Handlebars
+- **Frontend Technologies:** ReactJS, Next.js, Vue.js, Angular, AngularJS, Ionic, jQuery, Handlebars
 
 - **Databases:** MongoDB, MySQL, Firebase
 
 - **Tools/DevOps:** Git (GitHub/GitLab/BitBucket), Docker, GraphQL, WebSockets (Socket.io), Puppeteer
 
 - **Platforms:** PrestaShop, Chrome Extension Development
+
+- **Familiar (academic + actively upskilling):** ASP.NET Core, Entity Framework, RxJS, Angular CLI
 
 ---
 
@@ -85,6 +87,8 @@ _Aug 2018 – Feb 2019_
 - **Bachelor of Computer Science (Software Engineering)** | UTM (2019)
 
 - **GPA: 3.73/4.00** | Top 7 Graduate | JPA Scholar
+
+- **Final-year project:** Full-stack web application built with **Angular** and **.NET Core** (MVC architecture, REST API, SQL database)
 
 - **Matriculation (Computer Science)** | Penang Matriculation (2015)
 

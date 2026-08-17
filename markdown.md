@@ -10,7 +10,7 @@
 
 ### **Professional Summary**
 
-Full-stack developer with **7+ years** building high-traffic, public-facing e-commerce platforms, enterprise integrations, and AI-powered systems with **Laravel**, **React**, and **Node.js**. Integrated multi-marketplace APIs (Lazada, Shopee, TikTok), led payment workflows, and mentored developers across multiple teams as a technical guide on Laravel/React best practices.
+Full-stack developer with **7+ years** building high-traffic, public-facing e-commerce platforms, enterprise integrations, and **AI/LLM systems** with **Laravel**, **React**, and **Node.js**. Shipped production LLM features across OpenAI, Google Gemini and Vertex AI - multi-turn chatbots, retrieval-augmented generation, and multimodal video analysis. Integrated multi-marketplace APIs (Lazada, Shopee, TikTok), led payment workflows, and mentored developers across multiple teams as a technical guide on Laravel/React best practices.
 
 ---
 
@@ -19,6 +19,8 @@ Full-stack developer with **7+ years** building high-traffic, public-facing e-co
 - **Languages:** PHP, JavaScript, TypeScript, C#, SQL
 
 - **Backend:** Laravel (Expert), .NET Core, Node.js, Express, Lumen
+
+- **AI / LLM:** OpenAI (GPT-4o), Google Gemini, Vertex AI, Claude API · RAG & embeddings · prompt engineering · structured JSON output · SSE streaming · token/cost tracking
 
 - **Frontend:** React, Vue, Angular, Next.js, jQuery, Tailwind CSS, Bootstrap
 
@@ -30,7 +32,7 @@ Full-stack developer with **7+ years** building high-traffic, public-facing e-co
 
 - **Integrations:** Salesforce, MyInvois, E-commerce APIs
 
-- **Other:** AI/LLM (OpenAI, Claude API), Chrome Extensions, WebSockets
+- **Other:** Chrome Extensions, WebSockets, Redis, Puppeteer
 
 - **Familiar (academic + actively upskilling):** ASP.NET Core, Entity Framework, RxJS, Angular CLI
 
@@ -102,7 +104,11 @@ _Aug 2018 – Feb 2019_
 
 ### **Side Projects**
 
-- **SwiftHire** (React, Laravel, AI/LLM) - Self-interview SaaS platform with AI-powered candidate assessment.
+- **SwiftHire** (React, TypeScript, Supabase, Vertex AI) - Self-interview hiring platform. Multimodal **video interview analysis** with Gemini 2.5 Flash, multi-step analysis pipeline with credit reservation and refund-on-failure, structured JSON output via response schema.
+
+- **skor.my** (Laravel, Vue 3, Google Gemini) - AI marking platform for Malaysian SPM exams. **RAG pipeline** - document chunking, embeddings, and retrieval-augmented rubric generation - plus queue-based AI marking with retries and a multi-turn bilingual assistant.
+
+- **gnius.my** (Node.js, Express, Redis, OpenAI) - Context-aware LLM study chatbot serving multiple sites from one API. Redis conversation memory with rolling AI-generated summaries, SSE streaming, per-user rate limiting, and token/cost tracking.
 
 - **MrCount** (Laravel, React) - E-commerce system with multi-warehouse inventory and order fulfillment.
 

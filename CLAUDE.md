@@ -15,6 +15,8 @@ Static HTML resume/CV page for Syafiq Bin Shamsuddin. No build tools or dependen
 | `docs/ARCHITECTURE.md` | Changing styles, print layout or file structure |
 | `tasks/project-docs/current.md` | Changing the doc set itself |
 
+Project agents live in `.claude/agents/` and bootstrap from this file plus the three `docs/` files; a docs change reaches them without an agent edit. Their memory folder `.claude/agent-memory/` is gitignored because it can hold private context.
+
 When they disagree: `index.html` wins over any doc (it is what ships), essentials wins over the other two docs, and `CLAUDE.local.md` wins on anything about the job search. The `[SOURCED]` / `[INFERRED]` / `[TBD]` tags in `docs/` are content; don't strip them in a cleanup.
 
 ## Files {#files}

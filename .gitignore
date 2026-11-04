@@ -13,3 +13,6 @@ Thumbs.db
 
 # Local Claude context (personal, not for public repo)
 CLAUDE.local.md
+
+# Agent memory may hold private job-search context (public repo)
+.claude/agent-memory/

@@ -1,6 +1,6 @@
 # Project doc set {#project-docs}
 
-**Status:** created 04/11/2026, committed and pushed in `0baa3ec`.
+**Status:** doc set shipped in `0baa3ec`; project agents added 04/11/2026 in the commit after it.
 **Owner:** the repo owner. `update-claude-docs` maintains `CLAUDE.md`; edits to `docs/` go through this doc.
 
 > Public repo: this file is world-readable. No job-search context here.
@@ -18,7 +18,9 @@
 |---|---|
 | Public-repo rule leads essentials | `gh repo view` shows PUBLIC; private positioning notes already live in gitignored `CLAUDE.local.md` and must stay there |
 | Honesty, verb and qualifier rules written generically | The specifics behind them are job-search context (see above) |
-| No `.claude/agents/`, so no `agent-setup` run | Nothing to bootstrap |
+| Seven project agents added under `.claude/agents/` (04/11/2026) | They bootstrap from `CLAUDE.md` and the three `docs/` files and cite PRD `Out of scope` / `Open questions` and ARCHITECTURE `Building blocks` / `Runtime view` / `Risks` by heading. Renaming one of those headings means re-running `agent-setup` |
+| `.claude/agent-memory/` gitignored | Agents read `CLAUDE.local.md`, so their notes can carry private context into a public repo |
+| Agents verify print length with `/Count N` from a headless-Chrome PDF | `mdls` returns null for files under `/tmp`; a raw `/Type /Page` grep miscounted a one-page PDF as 0 |
 | CSS list bullets changed from em dash to hyphen (04/11/2026) | Owner's choice; brings the rendered page in line with the no-em-dash rule |
 
 ## Open findings {#open-findings}

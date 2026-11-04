@@ -1,6 +1,6 @@
 # Project doc set {#project-docs}
 
-**Status:** created 04/11/2026, uncommitted.
+**Status:** created 04/11/2026, committed and pushed in `0baa3ec`.
 **Owner:** the repo owner. `update-claude-docs` maintains `CLAUDE.md`; edits to `docs/` go through this doc.
 
 > Public repo: this file is world-readable. No job-search context here.

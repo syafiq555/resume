@@ -234,7 +234,7 @@ a {
 }
 
 .experience__list li::before {
-    content: "\2014";
+    content: "-";
     position: absolute;
     left: 0;
     color: var(--border);
@@ -262,7 +262,7 @@ a {
 }
 
 .project-item::before {
-    content: "\2014";
+    content: "-";
     position: absolute;
     left: 0;
     color: var(--border);
@@ -360,7 +360,7 @@ a {
 }
 
 .certs span::before {
-    content: "\2014";
+    content: "-";
     margin-right: 0.5rem;
     color: var(--border);
 }

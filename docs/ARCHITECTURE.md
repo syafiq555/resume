@@ -6,7 +6,7 @@ Frame: arc42, trimmed to the sections a one-page static site has an analogue for
 
 Ranked, because they conflict and the ranking settles trade-offs:
 
-1. **Truthful content.** A claim the owner can't defend costs more than a weaker claim. `[SOURCED]` commits `2ec4f95`, `2916848`.
+1. **Truthful content.** A claim the owner can't defend costs more than a weaker claim. `[SOURCED]` honesty rules in `ARCHITECTURE-ESSENTIALS.md`.
 2. **Print fidelity.** The PDF is what employers receive. `[SOURCED]` `CLAUDE.md`.
 3. **ATS readability.** Real text in document order. `[INFERRED]`
 4. **Screen polish.** Hover and fade-in are nice to have and are the first thing to give up. `[INFERRED]` they live in a screen-only stylesheet.
@@ -64,7 +64,7 @@ Consequence: a size written in `rem` in `resume.css` scales automatically in pri
 
 ## Crosscutting concepts {#crosscutting}
 
-- **Bullets are CSS, not text.** List markers come from `::before { content: "-" }` on `.experience__list li`, `.project-item` and `.certs span`, so they never reach the copied text or markdown. `[SOURCED]` `css/resume.css:237,265,363`.
+- **Bullets are CSS, and still reach the PDF text.** List markers come from `::before { content: "-" }` on `.experience__list li`, `.project-item` and `.certs span`. They never appear in `markdown.md`, but they are in the PDF's text layer that an ATS reads (`pdftotext` shows each one), so the glyph must stay plain ASCII. `[SOURCED]` `css/resume.css:237,265,363`.
 - **Emphasis convention.** `<strong>` marks the system name or the measurable outcome in a bullet; inside `.project-item` it renders in the bronze accent. `[SOURCED]`
 - **Qualifiers are content.** The skills grid's "Familiar" row carries an inline `<em>(academic + actively upskilling)</em>`. `[SOURCED]`
 
@@ -72,10 +72,10 @@ Consequence: a size written in `rem` in `resume.css` scales automatically in pri
 
 | Requirement | How it's checked |
 |---|---|
-| Fits 2 A4 pages | Print preview, A4, count pages `[INFERRED]` target |
+| 2 A4 pages preferred, 3 acceptable | Print preview, A4, count pages `[SOURCED]` PRD metrics |
 | No entry split across pages | Print preview `[SOURCED]` `page-break-inside: avoid` |
 | HTML and markdown agree | Read both side by side after an edit `[SOURCED]` parity rule |
-| No em dash in text | `grep -c "$(printf '\342\200\224')" index.html markdown.md` returns 0 for both `[SOURCED]` |
+| No em dash in text | The check command under the no-em-dash rule in `ARCHITECTURE-ESSENTIALS.md` returns 0 `[SOURCED]` |
 
 No automated checks exist. `[SOURCED]` no test or CI files in the repo.
 
@@ -92,7 +92,7 @@ No automated checks exist. `[SOURCED]` no test or CI files in the repo.
 
 | Term | Meaning |
 |---|---|
-| `--accent` | Near-black `#1a1a1a`. Not the bronze; `CLAUDE.md`'s "Accent `#8b7355`" refers to `--accent-warm` |
+| `--accent` | Near-black `#1a1a1a`. Not the bronze |
 | `--accent-warm` | The bronze `#8b7355`: title, company names, project names, hover colour |
 | `--ink` / `--ink-secondary` / `--ink-muted` | Text greys, darkest to lightest |
 | Honesty rule | Every number and strong verb must be defensible in an interview. See `ARCHITECTURE-ESSENTIALS.md` |

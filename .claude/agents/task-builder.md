@@ -48,7 +48,7 @@ Then run `/read-summary` for the task context, and read:
 2. **Print check passes, and you ran it.**
    `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer --print-to-pdf=/tmp/resume-check.pdf "file://$PWD/index.html" && grep -ao '/Count [0-9]*' /tmp/resume-check.pdf | head -1`
    Report the count. Then `Read` the PDF and look at every page: an experience entry split across pages or a heading stranded at a page bottom is a failure even at two pages. A headless *screenshot* of the screen view catches the fade-in animation mid-way and looks blank; use the PDF.
-3. **Em dash check is zero**: `grep -c "$(printf '\342\200\224')" index.html markdown.md css/*.css`.
+3. **Em dash check is zero**: `grep -c "$(printf '\342\200\224')" index.html markdown.md css/*.css; grep -c '\\2014' css/*.css`. The second command catches the CSS escape form, which the first can't see.
 4. **You stayed in scope**, and every parity twin you didn't own is listed under `Not done`.
 5. **Nothing you started is still running.**
 

@@ -35,7 +35,7 @@ Open `index.html` directly in the browser (`file://` path). This project lives u
 
 ## Print to PDF {#print}
 
-Use browser's print function (Ctrl+P) → Save as PDF. Page is optimized for A4 with proper print styles. Check the page count after every content edit (see the print-check rule in essentials).
+Use browser's print function (Ctrl+P) → Save as PDF. Page is optimized for A4 with proper print styles. Check the page count after every content edit (see the print-check rule in essentials for the headless-Chrome command). A headless *screenshot* of the screen view comes out blank because it fires mid fade-in; print to PDF and `Read` it instead. `pdftotext -layout` on that PDF shows what an ATS reads, CSS bullet glyphs included.
 
 ## CSS Architecture {#css}
 

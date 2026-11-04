@@ -237,7 +237,7 @@ a {
     content: "-";
     position: absolute;
     left: 0;
-    color: var(--border);
+    color: var(--ink-muted);
     font-weight: 300;
 }
 
@@ -265,7 +265,7 @@ a {
     content: "-";
     position: absolute;
     left: 0;
-    color: var(--border);
+    color: var(--ink-muted);
 }
 
 .project-item strong {
@@ -362,7 +362,7 @@ a {
 .certs span::before {
     content: "-";
     margin-right: 0.5rem;
-    color: var(--border);
+    color: var(--ink-muted);
 }
 
 /* ===== MOBILE RESPONSIVE ===== */

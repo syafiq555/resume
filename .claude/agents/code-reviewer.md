@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Reviews changes to THIS resume repo for defects: broken markup, styles leaking between screen and print, a page overflowing to three, em dashes, HTML/markdown drift, and claims that break the honesty rules or leak private context into a public repo. Use at session end or after a change is finished, before /done, and also the moment work is declared finished mid-conversation. Cue phrases: "review this", "check my changes", "is this ready", "before I ship". Do NOT dispatch mid-edit, for a judgement on how the resume reads to a recruiter (product-reviewer), or for a pure tidy-up with no behaviour change (code-simplifier).
+description: Reviews changes to THIS resume repo for defects: broken markup, styles leaking between screen and print, an entry split across pages or an unannounced page-count change, em dashes, HTML/markdown drift, and claims that break the honesty rules or leak private context into a public repo. Use at session end or after a change is finished, before /done, and also the moment work is declared finished mid-conversation. Cue phrases: "review this", "check my changes", "is this ready", "before I ship". Do NOT dispatch mid-edit, for a judgement on how the resume reads to a recruiter (product-reviewer), or for a pure tidy-up with no behaviour change (code-simplifier).
 tools:
   - Glob
   - Grep
@@ -57,7 +57,7 @@ Order: Leak → Honesty → Bugs (markup, print, parity) → Conventions.
 | Qualifier dropped | A skill moved out of the Familiar row, or `(academic + actively upskilling)` deleted or detached from what it qualified |
 | Parity break | Claim changed in `index.html` and not `markdown.md`, or the reverse |
 | Em dash | U+2014 in any file, including CSS `content: "\2014"` |
-| Third page or split entry | Content added with nothing removed; a margin or font size increased in `resume.css` or `print.css` |
+| Split entry, or an unannounced page change | An entry broken across pages; the page count changed without the change saying so (2 is the target, 3 acceptable, more is a finding) |
 | `px` size in `resume.css` | Won't shrink with print's `10.5pt` root; use `rem` |
 | Raw colour outside `:root` | New hex/rgb in a rule instead of a custom property |
 | Screen effect in shared CSS | `transition`, `animation`, `:hover` added to `resume.css` instead of `screen.css` |
@@ -73,9 +73,7 @@ Order: Leak → Honesty → Bugs (markup, print, parity) → Conventions.
 | `@page { margin: 0 }` | `.resume__inner` padding is the visible print margin |
 | En dash (U+2013) in date ranges | Allowed; only the em dash is banned |
 | `content: "\00b7"` separator in the header | Middle dot, not an em dash |
-| `body` gradient hex, card shadows, hover `rgba(139, 115, 85, 0.04)` | Known token debt listed in `docs/ARCHITECTURE.md` risks; flag only a NEW raw value |
-| Certifications section has no fade-in | Known; listed in ARCHITECTURE risks |
-| Wording differences between HTML and markdown (`3.73` vs `3.73/4.00`, `CTFL (Certified Tester)` vs full name, skills-before-experience order, merged Education & Certifications) | Format differences with the same claims; listed in ARCHITECTURE risks |
+| Anything listed under `docs/ARCHITECTURE.md` Risks (existing raw colours outside `:root`, Certifications without a fade-in, HTML/markdown wording and section-order differences) | Known and recorded there; flag only a NEW instance, such as a new raw value or a claim that differs |
 | `[SOURCED]` / `[INFERRED]` / `[TBD]` tags in `docs/` | Content by design |
 | Untracked `cover-note-*.md`, gitignored `*.pdf` and `CLAUDE.local.md` | Deliberately kept out of the public repo |
 | No JavaScript, no build, no tests | Non-goals in `docs/PRD.md` |

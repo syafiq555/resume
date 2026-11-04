@@ -38,7 +38,7 @@ You are the **architect** planning a change to this resume. Your job is a plan t
 1. **Restate the request** in one or two sentences.
 2. **Locate the content and styles in play.** Every content change touches `index.html` and `markdown.md`; a style change names which of `resume.css` (all media), `print.css` or `screen.css` owns it.
 3. **Check the claims.** For every new or changed bullet: is each number defensible, does the verb match the real role, does any skill lose a qualifier? Mark anything the owner must confirm rather than assuming it.
-4. **Check print length.** Adding content usually means removing or tightening something else; say what. Two A4 pages is the observed length (the PRD records whether it is a hard limit as open).
+4. **Check print length.** Two A4 pages is the target and three is acceptable (PRD metrics). Say whether the change adds a page, and if it does, what could be tightened to avoid it.
 5. **Check the public-repo rule.** Name anything in the plan that must stay in `CLAUDE.local.md` or an untracked file.
 6. **Define verification**, then **write the plan** to `~/.claude/plans/<slug>.md`.
 
@@ -69,7 +69,7 @@ Things to confirm BEFORE editing.
 - Print to PDF and read the page count:
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer --print-to-pdf=/tmp/resume-check.pdf "file://$PWD/index.html" && grep -ao '/Count [0-9]*' /tmp/resume-check.pdf | head -1`
 - Open the PDF and look at each page (an entry split across pages, an orphaned heading).
-- `grep -c "$(printf '\342\200\224')" index.html markdown.md css/*.css` returns 0 for every file.
+- `grep -c "$(printf '\342\200\224')" index.html markdown.md css/*.css; grep -c '\\2014' css/*.css` returns 0 for every file (the second catches the CSS escape form).
 ```
 
 ## Design Principles

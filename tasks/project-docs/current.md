@@ -1,6 +1,6 @@
 # Project doc set {#project-docs}
 
-**Status:** doc set shipped in `0baa3ec`; project agents added 04/11/2026 in the commit after it.
+**Status:** ✅ Doc set and seven project agents in place; no open questions.
 **Owner:** the repo owner. `update-claude-docs` maintains `CLAUDE.md`; edits to `docs/` go through this doc.
 
 > Public repo: this file is world-readable. No job-search context here.
@@ -20,12 +20,20 @@
 | Honesty, verb and qualifier rules written generically | The specifics behind them are job-search context (see above) |
 | Seven project agents added under `.claude/agents/` (04/11/2026) | They bootstrap from `CLAUDE.md` and the three `docs/` files and cite PRD `Out of scope` / `Open questions` and ARCHITECTURE `Building blocks` / `Runtime view` / `Risks` by heading. Renaming one of those headings means re-running `agent-setup` |
 | `.claude/agent-memory/` gitignored | Agents read `CLAUDE.local.md`, so their notes can carry private context into a public repo |
-| Agents verify print length with `/Count N` from a headless-Chrome PDF | `mdls` returns null for files under `/tmp`; a raw `/Type /Page` grep miscounted a one-page PDF as 0 |
-| CSS list bullets changed from em dash to hyphen (04/11/2026) | Owner's choice; brings the rendered page in line with the no-em-dash rule |
+| CSS list bullets: hyphen, in `--ink-muted` grey (04/11/2026) | Owner's choices. The em dash broke the no-em-dash rule and reached the ATS text; the first hyphen at `--border` grey nearly vanished in print |
+| Page target: 2 A4 pages preferred, 3 acceptable (04/11/2026) | Owner's decision; recorded in PRD metrics and acceptance, essentials print-check, and the reviewer agents' severity |
+| Skill rows kept as they are (04/11/2026) | Owner's decision after a review question; specifics in the gitignored `CLAUDE.local.md`. Not a finding to re-raise |
+| Docs don't cite commits by hash | Some older commit subjects carry job-search context, and the repo is public |
 
-## Open findings {#open-findings}
+## Gotchas {#gotchas}
 
-Recorded, not resolved; the owner decides. Mirrored in `docs/PRD.md#open-questions`.
+| Symptom | Cause | Fix |
+|---|---|---|
+| Page count is null or 0 | `mdls` doesn't index `/tmp`; Chrome's PDF writes `/Type /Page` in a form a simple grep misses | `grep -ao '/Count [0-9]*' <pdf> \| head -1` |
+| Em dash check passes but a CSS bullet still renders one | CSS writes it as the escape `"\2014"`, which the byte-form grep can't see | Also run `grep -c '\\2014' css/*.css` |
+| A doc that documents the em dash check fails it | The command quotes the character itself | Write it as `printf '\342\200\224'` |
+| Headless screenshot of the page is blank | Captured mid fade-in from `screen.css` | Print to PDF and read that |
 
-- Angular / .NET Core appear unqualified in the Frontend / Backend skill rows.
-- 2-page length is observed, not a written target.
+## Next Steps {#next-steps}
+
+None open. New questions go in `docs/PRD.md#open-questions`, which is the only copy.

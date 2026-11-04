@@ -4,11 +4,11 @@ Rules that can be broken in a single line without anything visibly failing. Read
 
 ## 1. Public repo: no job-search context in committed files {#public-repo}
 
-`github.com/syafiq555/resume` is public, so everything committed (including `docs/` and `tasks/`) is readable by any employer. Target roles, active applications, company names being applied to, and positioning notes go in the gitignored `CLAUDE.local.md` only. Per-application cover notes are working files; committing one publishes it.
+`github.com/syafiq555/resume` is public, so everything committed (including `docs/`, `tasks/` and commit messages) is readable by any employer. Commit subjects predate this rule, so don't cite commits by hash in docs. Target roles, active applications, company names being applied to, and positioning notes go in the gitignored `CLAUDE.local.md` only. Per-application cover notes are working files; committing one publishes it.
 
 ## 2. Every number must be defensible in an interview {#defensible-numbers}
 
-A figure stays only if the owner can explain how they'd back it up. Prefer a smaller true number or a qualitative claim to a bigger one nobody can source. One unprovable figure was already removed in commit `2ec4f95`.
+A figure stays only if the owner can explain how they'd back it up. Prefer a smaller true number or a qualitative claim to a bigger one nobody can source.
 
 ## 3. Verbs match the real role {#verbs-match-role}
 
@@ -24,11 +24,19 @@ Any claim edited in one is edited in the other in the same change. When they've 
 
 ## 6. No em dashes in text {#no-em-dash}
 
-Use a hyphen, a colon or brackets. Date ranges use the en dash already in place. Check with `grep -c "$(printf '\342\200\224')" index.html markdown.md` (the escape keeps the character itself out of this file). CSS `content:` glyphs count too: the list bullets are a hyphen.
+Use a hyphen, a colon or brackets. Date ranges use the en dash already in place. CSS `content:` glyphs count too, because they land in the PDF text an ATS reads; the list bullets are a hyphen. Check both forms, the character and the CSS escape (written as escapes so the character stays out of this file):
+
+`grep -c "$(printf '\342\200\224')" index.html markdown.md css/*.css; grep -c '\\2014' css/*.css`
+
+Every count must be 0.
 
 ## 7. Check the printed page after every content edit {#print-check}
 
-One added bullet can push the PDF onto a third page or split an entry, and nothing on screen shows it. Print preview at A4 before calling a change done. Sizes in `resume.css` belong in `rem` so they shrink with `print.css`'s `10.5pt` root; a `px` size won't.
+One added bullet can add a page or split an entry, and nothing on screen shows it. Two pages is the target and three is acceptable, so a new page should be a choice, not an accident. Print preview at A4 before calling a change done, or from the shell (macOS):
+
+`"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer --print-to-pdf=/tmp/resume-check.pdf "file://$PWD/index.html" && grep -ao '/Count [0-9]*' /tmp/resume-check.pdf | head -1`
+
+`/Count N` is the page count. Then open the PDF to check no entry splits. Sizes in `resume.css` belong in `rem` so they shrink with `print.css`'s `10.5pt` root; a `px` size won't.
 
 ## 8. Colours and fonts come from `:root` {#tokens}
 

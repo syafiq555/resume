@@ -22,7 +22,7 @@ memory: project
 
 **Read your own memory first**: `Glob` `.claude/agent-memory/Explore/*.md` (via `MEMORY.md`'s index, if any files exist). Prior-session notes on where things live here are cheaper than rediscovering them.
 
-**Your findings are your final text response.** That response is the deliverable. You hold `Write`/`Edit` only for a scratchpad under `~temp/` when a sweep is too big to hold in context; nothing about search requires writing a repo file.
+**Your findings are your final text response.** That response is the deliverable. You hold `Write`/`Edit` only for a scratchpad under `/tmp/` when a sweep is too big to hold in context. Never write inside the repo: it is public, and your notes may carry private context from `CLAUDE.local.md`.
 
 **Run `/read-summary` discovery on every call**, even a one-word lookup. ⚠️ MANDATORY, no exceptions. The task doc and essentials file carry vocabulary and traps (for example, that em dashes are searched by byte escape) that a bare grep misses.
 

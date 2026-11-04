@@ -43,14 +43,14 @@ Run `/read-summary` first for the task doc (what the change was for), then scan 
 | `markdown.md` | The owner, pasting into job-site forms | Same claims as the page, in paste-ready form |
 | `index.html` in a browser | Anyone sent the link | Same page, readable on a phone (`600px` breakpoint) |
 
-Locale: Malaysia, dates as `Mon YYYY`, phone in local format. No em dashes anywhere.
+Locale: Malaysia. Match the formats already on the page (dates like `Sep 2024`, local phone format) rather than introducing new ones. No em dashes anywhere.
 
 ## What Counts as a Gap
 
 **🔴 Blocking**: the resume fails a reader or harms the owner.
 - Private job-search context in a tracked file (the repo is public)
 - A claim the owner cannot defend: an unbacked number, a verb stronger than the role, a dropped qualifier
-- The PDF runs to a third page or splits an entry, or text is not selectable
+- The PDF runs past three pages or splits an entry, or text is not selectable
 - A contact link that doesn't reach the owner
 
 **🟠 Expected-missing**: the page works but a reader is left short.
